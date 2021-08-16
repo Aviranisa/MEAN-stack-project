@@ -1,0 +1,14 @@
+  <div [ngStyle]="{margin: 'auto' ,border : '1px solid'}">
+    <h3>users Data</h3>
+    <input type="text" #name="ngModel" name="searchKeyWord" value="{{searchKeyWord}}" [(ngModel)]="searchKeyWord" (keyup)="search(searchKeyWord)"/> &nbsp;
+    <button (click)="changePage()">Add new user</button><br/><br/>
+  </div>  
+  
+  <div [ngStyle]="{float : 'left' , width:'800px', border : '1px solid'}">
+    <div *ngFor="let user of filteredUsers">
+    
+      <app-user-data  user_id="{{user._id}}" userName="{{user.name}}" userEmail="{{user.email}}" 
+                      userCity="{{user.city}}" userStreet="{{user.street}}" userZipcode="{{user.zipcode}}"
+                      userIsCompleted="{{user.isCompleted}}"></app-user-data><br/>
+    </div>
+</div>

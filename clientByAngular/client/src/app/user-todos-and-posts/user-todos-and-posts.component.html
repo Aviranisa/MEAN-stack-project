@@ -1,0 +1,27 @@
+<strong>Tasks.</strong><button style="background-color: rgb(80, 199, 247);" (click)="tasksViewOrNew=!tasksViewOrNew">Add Task</button>
+<div *ngIf="tasksViewOrNew" [class]="'scrollBar'">
+    <div *ngFor="let task of user.tasks">
+        Title : {{task.title}}<br/>
+        Completed : {{task.completed}}
+        <button *ngIf="!task.completed" (click)="markCompleted(task._id)">Mark Completed</button><br/><br/>
+    </div>
+</div>
+<div *ngIf="tasksViewOrNew == false" >
+    <input type="text" #name="ngModel" placeholder="New Task" name="newTask" [(ngModel)]="newTask" (keyup)="newTask"/><br/>
+    <button (click)="updateNewTask()">Add Task</button><br/>
+    <button (click)="tasksViewOrNew = true">Cancel</button><br/>
+</div>
+
+<strong>Posts.</strong><button style="background-color: rgb(80, 199, 247);" (click)="postsViewOrNew=!postsViewOrNew">Add Post</button>
+<div *ngIf="postsViewOrNew" [class]="'scrollBar'">
+    <div *ngFor="let post of user.posts">
+        Title : {{post.title}}<br/>
+        Body : {{post.body}}<br/><br/>
+    </div>
+</div>
+<div *ngIf="postsViewOrNew == false" >
+    <input type="text" #name="ngModel" placeholder="New Post Title" name="newPost.title" [(ngModel)]="newPost.title" (keyup)="newPost.title"/><br/>
+    <input type="text" #name="ngModel" placeholder="New Post Body" name="newPost.body" [(ngModel)]="newPost.body" (keyup)="newPost.body"/><br/>
+    <button (click)="updateNewPost()">Add Post</button><br/>
+    <button (click)="postsViewOrNew = true">Cancel</button><br/>
+</div>

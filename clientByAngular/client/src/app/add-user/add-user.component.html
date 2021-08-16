@@ -1,0 +1,6 @@
+<p>add-user works!</p>
+<form #f="ngForm" (ngSubmit)="AddNewUser()">
+    Name : <input type="text" #name="ngModel" name="name" [(ngModel)]="newUser.name"/><br/>
+    Email : <input type="email" #email="ngModel" name="email" [(ngModel)]="newUser.email"/><br/>
+    <button (click)="backToList()">Cancel</button> <input type="submit" value="Add New User"/>
+</form>

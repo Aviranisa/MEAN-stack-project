@@ -1,0 +1,21 @@
+<div  [ngClass]="istrue(userIsCompleted)? 'borderGreen' : 'borderRed' "[class.link]="overLink" [class.width]="clickLink">
+    <div *ngIf="clickLink" [ngStyle]="{margin: 'auto', float : 'right', border : '1px solid blue'}">
+      <app-user-todos-and-posts user_id="{{user_id}}" (userCompletedEvent)="this.userIsCompleted = $event"></app-user-todos-and-posts>
+    </div>
+
+  <form #f="ngForm">
+    ID : <a routerLink="" (mouseover)="overLink=!overLink" (mouseout)="overLink=!overLink" (click)="clickLink=!clickLink">{{user_id}}</a><br/><br/>
+    Name : <input type="text" #name="ngModel" name="name" value="{{userName}}" [(ngModel)]="userName"/><br/>
+    Email : <input type="text" #email="ngModel" name="email" value="{{userEmail}}" [(ngModel)]="userEmail" /><br/><br/>
+    <button (mouseover)="userOtherDataIn()" (click)="userOtherDataOut()">Other Data</button>&nbsp;&nbsp;&nbsp;&nbsp;              
+    <div *ngIf="istrue(userOtherData)">
+      <h4>More information :</h4>
+      City : <input type="text" #city="ngModel" name="city" value="{{userCity}}" [(ngModel)]="userCity" /><br/>
+      Street : <input type="text" #street="ngModel" name="street" value="{{userStreet}}" [(ngModel)]="userStreet"/><br/>
+      Zipcode : <input type="text" #zipcode="ngModel" name="zipcode" value="{{userZipcode}}" [(ngModel)]="userZipcode"/>
+    </div>
+    <button (click)="updateUser()">Update</button>
+    <button (click)="deleteUser()">Delete</button><br/><br/>
+  </form>
+
+</div>

@@ -1,0 +1,6 @@
+div.scrollBar{
+    width: auto;
+    height: 125px;
+    overflow: auto;
+    border : 1px solid rgb(109, 61, 158);
+}

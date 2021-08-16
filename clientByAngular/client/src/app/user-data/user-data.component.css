@@ -1,0 +1,23 @@
+div.borderRed{
+    width: 240px;
+    border-color: red;
+    border-style: solid;
+}
+div.borderGreen{
+    width: 240px;
+    border-color: green;
+    border-style: solid;
+}
+div.link{
+    background-color: rgb(248, 196, 52)
+}
+div.width{
+    width: auto ;
+    margin-right: 250px;
+    margin-left:5px;
+    height:300px;
+}
+div.scrollBar{
+    width: auto;
+    overflow: auto;
+}
